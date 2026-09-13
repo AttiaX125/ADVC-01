@@ -59,6 +59,7 @@
         }*/
         #endregion
         #region Q5 - FindMax<T>
+        /*
         public static T FindMax<T>(List<T> items) where T : IComparable<T>
         {
             T max = items[0];
@@ -68,6 +69,16 @@
                     max = item;
             }
             return max;
+        }
+        */
+        #endregion
+        #region Q6 - IRepository<T>
+        public interface IRepository<T>
+        {
+            void Add(T item);
+            T GetById(int id);
+            List<T> GetAll();
+            void Remove(T item);
         }
         #endregion
     }
