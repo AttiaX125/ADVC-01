@@ -201,5 +201,12 @@
         // IConsumer<Animal> baseConsumer = new AnimalConsumer();
         // IConsumer<Animal> derivedConsumer = baseConsumer; // works via 'in' (contravariance)
         #endregion
+        #region Q17 - Covariance vs Contravariance
+        // Covariance (out): allows a generic type to return more derived types than specified.
+        // Used for output/return positions. Example: IEnumerable<out T>.
+
+        // Contravariance (in): allows a generic type to accept less derived (more general) types
+        // than specified. Used for input/parameter positions. Example: IComparer<in T>.
+        #endregion
     }
 }
