@@ -81,5 +81,11 @@
             void Remove(T item);
         }
         #endregion
+        #region Q7 - struct Constraint
+        public class StructOnly<T> where T : struct
+        {
+            public T Value { get; set; }
+        }
+        #endregion
     }
 }
