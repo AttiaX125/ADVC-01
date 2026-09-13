@@ -239,5 +239,53 @@
         {
         }
         #endregion
+        #region Q20 - Cache<TKey, TValue>
+        public class Cache<TKey, TValue>
+        {
+            private class CacheItem
+            {
+                public TValue Value { get; set; }
+                public DateTime ExpiresAt { get; set; }
+            }
+
+            private Dictionary<TKey, CacheItem> items = new Dictionary<TKey, CacheItem>();
+
+            public void Add(TKey key, TValue value, TimeSpan expiration)
+            {
+                items[key] = new CacheItem
+                {
+                    Value = value,
+                    ExpiresAt = DateTime.Now.Add(expiration)
+                };
+            }
+
+            public bool Contains(TKey key)
+            {
+                if (!items.ContainsKey(key))
+                    return false;
+
+                if (DateTime.Now > items[key].ExpiresAt)
+                {
+                    items.Remove(key);
+                    return false;
+                }
+
+                return true;
+            }
+
+            public TValue Get(TKey key)
+            {
+                if (!Contains(key))
+                    return default(TValue);
+
+                return items[key].Value;
+            }
+
+            public void Remove(TKey key)
+            {
+                items.Remove(key);
+            }
+        }
+        #endregion
     }
 }
