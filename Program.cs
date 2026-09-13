@@ -139,5 +139,11 @@
             }
         }
         #endregion
+        #region Q13 - default Keyword
+        public T GetDefault<T>()
+        {
+            return default(T);
+        }
+        #endregion
     }
 }
