@@ -208,5 +208,20 @@
         // Contravariance (in): allows a generic type to accept less derived (more general) types
         // than specified. Used for input/parameter positions. Example: IComparer<in T>.
         #endregion
+        #region Q18 - Static Members in Generic Types
+        public class Counter<T>
+        {
+            public static int Count = 0;
+
+            public Counter()
+            {
+                Count++;
+            }
+        }
+
+        // Note: Counter<int>.Count and Counter<string>.Count are separate values,
+        // because each closed generic type (Counter<int>, Counter<string>) gets its own
+        // independent set of static members.
+        #endregion
     }
 }
