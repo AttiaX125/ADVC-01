@@ -93,5 +93,14 @@
             public T Value { get; set; }
         }
         #endregion
+        #region Q9 - new() Constraint
+        public class Factory<T> where T : new()
+        {
+            public T CreateInstance()
+            {
+                return new T();
+            }
+        }
+        #endregion
     }
 }
