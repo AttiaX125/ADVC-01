@@ -50,11 +50,24 @@
         }*/
         #endregion
         #region Q4 - Swap<T>
+        /*
         public static void Swap<T>(ref T a, ref T b)
         {
             T temp = a;
             a = b;
             b = temp;
+        }*/
+        #endregion
+        #region Q5 - FindMax<T>
+        public static T FindMax<T>(List<T> items) where T : IComparable<T>
+        {
+            T max = items[0];
+            foreach (var item in items)
+            {
+                if (item.CompareTo(max) > 0)
+                    max = item;
+            }
+            return max;
         }
         #endregion
     }
