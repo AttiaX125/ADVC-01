@@ -183,5 +183,23 @@
         // This works because 'out' allows a more derived type to be used
         // where a less derived type is expected (covariance).
         #endregion
+        #region Q16 - Contravariance (in)
+        public interface IConsumer<in T>
+        {
+            void Consume(T item);
+        }
+
+        public class AnimalConsumer : IConsumer<Animal>
+        {
+            public void Consume(Animal item)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+
+        // Usage:
+        // IConsumer<Animal> baseConsumer = new AnimalConsumer();
+        // IConsumer<Animal> derivedConsumer = baseConsumer; // works via 'in' (contravariance)
+        #endregion
     }
 }
