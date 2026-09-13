@@ -164,5 +164,24 @@
             }
         }
         #endregion
+        #region Q15 - Covariance (out)
+        public interface IProducer<out T>
+        {
+            T Produce();
+        }
+
+        public class AnimalProducer : IProducer<Animal>
+        {
+            public Animal Produce()
+            {
+                return new Animal();
+            }
+        }
+
+        // Usage:
+        // IProducer<Animal> producer = new AnimalProducer();
+        // This works because 'out' allows a more derived type to be used
+        // where a less derived type is expected (covariance).
+        #endregion
     }
 }
