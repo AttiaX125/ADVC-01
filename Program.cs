@@ -116,5 +116,19 @@
             }
         }
         #endregion
+        #region Q11 - Base Class Constraint
+        public class Animal
+        {
+            public string Name { get; set; }
+        }
+
+        public class AnimalHandler<T> where T : Animal
+        {
+            public void PrintName(T animal)
+            {
+                Console.WriteLine(animal.Name);
+            }
+        }
+        #endregion
     }
 }
