@@ -102,5 +102,19 @@
             }
         }
         #endregion
+        #region Q10 - Interface Constraint
+        public interface IShape
+        {
+            double GetArea();
+        }
+
+        public class ShapePrinter<T> where T : IShape
+        {
+            public void PrintArea(T shape)
+            {
+                Console.WriteLine(shape.GetArea());
+            }
+        }
+        #endregion
     }
 }
