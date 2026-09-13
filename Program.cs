@@ -36,6 +36,7 @@
         }*/
         #endregion
         #region Q3 - Pair<TKey, TValue>
+        /*
         public class Pair<TKey, TValue>
         {
             public TKey Key { get; set; }
@@ -46,6 +47,14 @@
                 Key = key;
                 Value = value;
             }
+        }*/
+        #endregion
+        #region Q4 - Swap<T>
+        public static void Swap<T>(ref T a, ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
         }
         #endregion
     }
