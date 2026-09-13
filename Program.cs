@@ -130,5 +130,14 @@
             }
         }
         #endregion
+        #region Q12 - Multiple Constraints
+        public class Repository<T> where T : class, new()
+        {
+            public T CreateNew()
+            {
+                return new T();
+            }
+        }
+        #endregion
     }
 }
