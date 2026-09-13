@@ -19,6 +19,7 @@
         #endregion
 
         #region Q2 - Container<T>
+        /*
         public class Container<T>
         {
             private List<T> items = new List<T>();
@@ -31,6 +32,19 @@
             public T Get(int index)
             {
                 return items[index];
+            }
+        }*/
+        #endregion
+        #region Q3 - Pair<TKey, TValue>
+        public class Pair<TKey, TValue>
+        {
+            public TKey Key { get; set; }
+            public TValue Value { get; set; }
+
+            public Pair(TKey key, TValue value)
+            {
+                Key = key;
+                Value = value;
             }
         }
         #endregion
