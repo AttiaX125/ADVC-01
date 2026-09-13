@@ -87,5 +87,11 @@
             public T Value { get; set; }
         }
         #endregion
+        #region Q8 - class Constraint
+        public class ClassOnly<T> where T : class
+        {
+            public T Value { get; set; }
+        }
+        #endregion
     }
 }
