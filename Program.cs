@@ -223,5 +223,21 @@
         // because each closed generic type (Counter<int>, Counter<string>) gets its own
         // independent set of static members.
         #endregion
+        #region Q19 - Inheriting from a Generic Class
+        public class BaseContainer<T>
+        {
+            public T Value { get; set; }
+        }
+
+        // Option 1: Keep it generic
+        public class DerivedContainer<T> : BaseContainer<T>
+        {
+        }
+
+        // Option 2: Close the generic type
+        public class IntContainer : BaseContainer<int>
+        {
+        }
+        #endregion
     }
 }
